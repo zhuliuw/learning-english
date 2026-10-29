@@ -366,40 +366,6 @@ html[lang="en"] .skills a {
   font-weight: 700;
 }
 
-.visit-board {
-  margin: 1rem 0 0;
-  padding: 0;
-  list-style: none;
-}
-
-.visit-row {
-  display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  gap: 0.8rem 1.2rem;
-  margin-top: 0.45rem;
-  padding: 0.85rem 1.05rem;
-  background: var(--surface);
-}
-
-.visit-row > span:first-child {
-  min-width: 0;
-}
-
-.visit-row .lesson-kicker {
-  overflow-wrap: anywhere;
-}
-
-.visit-row .lesson-title {
-  display: block;
-}
-
-.visit-count {
-  flex: none;
-  color: var(--tide);
-  font-weight: 700;
-}
-
 .lessons a:hover .lesson-title,
 .path a:hover,
 .skills a:hover .skill-name {
