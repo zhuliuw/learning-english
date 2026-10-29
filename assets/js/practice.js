@@ -49,9 +49,17 @@
     }
 
     function tried() {
-      if (!fields.length) return true;
-      for (var i = 0; i < fields.length; i++) {
-        if (!fields[i].value.trim()) return false;
+      if (fields.length) {
+        for (var i = 0; i < fields.length; i++) {
+          if (!fields[i].value.trim()) return false;
+        }
+        return true;
+      }
+      if (marks.length) {
+        for (var j = 0; j < marks.length; j++) {
+          if (marks[j].getAttribute("aria-pressed") !== "true") return false;
+        }
+        return true;
       }
       return true;
     }
@@ -77,6 +85,7 @@
         var button = event.currentTarget;
         var on = button.getAttribute("aria-pressed") !== "true";
         button.setAttribute("aria-pressed", on ? "true" : "false");
+        syncRound();
         writeStore();
       });
     }

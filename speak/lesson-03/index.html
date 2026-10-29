@@ -74,6 +74,13 @@
         <li><button type="button" aria-pressed="false">重音有没有落在实词上？实词是名字、动词、时间和东西。the、a、and 不必重读。</button></li>
         <li><button type="button" aria-pressed="false">不认识的词，有没有被你跳成沉默？</button></li>
       </ul>
+      <div class="round" hidden data-wait="marks" data-round="The manager calls at noon" data-ok="对上了。这就是那一句。" data-no="还不是这句。点已经放上的词，可以拿回来重排。">
+        <h2>再来一轮</h2>
+        <p>三问都标过以后，把这几个词按原句的顺序点上去。大约半分钟。</p>
+        <div class="round-bank" aria-label="词"></div>
+        <div class="round-line" lang="en" aria-label="你排的顺序"></div>
+        <p class="round-note" hidden aria-live="polite"></p>
+      </div>
       <aside class="point">
         <h2>给中文使用者的一处</h2>
         <p>重音在 manager、calls、noon、David、send、lunch、file。<span lang="en">she</span> 是经理，<span lang="en">he</span> 是 David。<span lang="en">does not call</span> 里的 <span lang="en">not</span> 要读出来，不要省掉。</p>
