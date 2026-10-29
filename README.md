@@ -22,14 +22,14 @@ python3 -m http.server 8000
 - [怎么学](method/)：一课只做一件事，做完只留一个修改点
 - [听](listen/)：四段不到一分钟的音频。听完用中文说出谁做了什么，或第二遍只补一个词。原文默认折着
 - [说](speak/)：四课跟读，用的是听过的句子。用自己的手机录音，网站不接收
-- [写](write/)：四课。从读过的句子换一个自己的细节，对照四条清单。写在纸上，不打分
+- [写](write/)：四课。从读过的句子换一个自己的细节，对照四条清单。写在课文页的框里，不打分
 - [读](read/)：五课，每篇大约 220–320 个词。前两课找谁在做什么，后三课看代词指回谁。没有词表，也没有音频
 
 英文是同一套页面，放在 `en/` 下面。课文里的英文原文两边相同，说明按各自的语言写。
 
 听力文件在 `assets/audio/`，全站只用 wav。句子是本站写的。声音用 espeak-ng 的美国英语、同一语速合成，可再分发。不是教科书、歌曲或影视录音。页面上没有变速控件。
 
-课文页上可以写下这一课的答案，或给口语的三问自己做标记。字和标记只留在这次浏览的浏览器里，用本站的 `assets/js/practice.js`。不上传，不打分，也没有账号。听力要先写了，才能打开原文和核对。
+课文页上可以写下这一课的答案，或给口语的三问自己做标记。字和标记只留在这次浏览的浏览器里，用本站的 `assets/js/practice.js`。不上传，不打分，也没有账号。听力要先写了，才能打开原文和核对。听的四课和写作第一课，写完可以再来一轮：把这一课里的四五个词按原句点回去。对错只显示在这一页，不记分，也不上传。
 
 页面不加载外部字体或统计。
 
@@ -62,7 +62,7 @@ python3 -m http.server 8000
 
 ## English
 
-A static notebook for adults who use Chinese and are learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. Start at the one-week page: listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that week, the index, a method page, five reading lessons of about 220–320 words, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Week ticks stay on paper. On a lesson, the learner types an answer or marks the three speaking checks. That stays in the browser for the visit, in `assets/js/practice.js`. It is not uploaded, it is not scored, and there is no account. A listening check stays folded until the learner has written. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
+A static notebook for adults who use Chinese and are learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. Start at the one-week page: listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that week, the index, a method page, five reading lessons of about 220–320 words, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Week ticks stay on paper. On a lesson, the learner types an answer or marks the three speaking checks. That stays in the browser for the visit, in `assets/js/practice.js`. It is not uploaded, it is not scored, and there is no account. A listening check stays folded until the learner has written. On the four listening lessons and the first writing lesson, a short extra round asks the learner to tap four or five words from that lesson back into order. The yes or no stays on the page. It is not stored as a score, and it is not uploaded. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
 
 ## License
 
