@@ -16,7 +16,9 @@ python3 -m http.server 8000
 
 ## 现在有什么
 
-- 首页：这个站是什么、怎么开始、听 / 说 / 读 / 写四个入口
+- 首页：怎么开始指向 [这一周](week/)
+- [这一周](week/)：听、读、说、写各一次，再留一天休息或只看一个修改点。可以打印。勾选不存在网站里
+- [课文](lessons/)：已经有的课，链到各课
 - [怎么学](method/)：一课只做一件事，做完只留一个修改点
 - [听](listen/)：四段不到一分钟的音频。听完用中文说出谁做了什么，或第二遍只补一个词。原文默认折着
 - [说](speak/)：四课跟读，用的是听过的句子。用自己的手机录音，网站不接收
@@ -37,7 +39,7 @@ python3 -m http.server 8000
 2. 阅读：已经有五课。前两课找谁在做什么，后三课看代词指回谁
 3. 口语：已经有四课跟读。录音留在自己的手机里，不上传
 4. 写作：已经有四课。从读过的句子换一个自己的细节，对照清单，不打分
-5. 把四项收成一周的安排，并列出已经有的课
+5. 一周安排和课文索引：已经有了。听、读、说、写各一次，外加一天休息或只看修改点
 
 每一阶段仍然是静态页面，没有账号。
 
@@ -51,7 +53,7 @@ python3 -m http.server 8000
 
 ## English
 
-A static notebook for Chinese speakers learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. What is here: a method page, five reading lessons, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Sentences stay on paper. The site has nowhere to upload them, and it does not score them. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. Later: a one-week plan.
+A static notebook for Chinese speakers learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. Start at the one-week page: listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that week, the index, a method page, five reading lessons, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Sentences and ticks stay on paper. The site has nowhere to upload them, it does not score them, and it does not store checks. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root.
 
 ## License
 
