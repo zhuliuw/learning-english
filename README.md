@@ -1,6 +1,6 @@
 # 清楚学英语
 
-给中文使用者的英语练习本。静态网站，默认中文，右上角可以换成英文。没有账号，没有后端，也不收集访问数据。
+给已经工作的中文使用者的成人笔记。静态网站，默认中文，右上角可以换成英文。没有账号，没有后端，也不收集访问数据。
 
 ## 在本地查看
 
@@ -60,7 +60,7 @@ python3 -m http.server 8000
 
 ## English
 
-A static notebook for Chinese speakers learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. Start at the one-week page: listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that week, the index, a method page, five reading lessons, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Sentences and ticks stay on paper. The site has nowhere to upload them, it does not score them, and it does not store checks. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
+A static notebook for adults who use Chinese and are learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. Start at the one-week page: listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that week, the index, a method page, five reading lessons, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Sentences and ticks stay on paper. The site has nowhere to upload them, it does not score them, and it does not store checks. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
 
 ## License
 
