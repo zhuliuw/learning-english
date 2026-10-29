@@ -37,15 +37,24 @@
         <div><dt>时间</dt><dd>约 15 分钟</dd></div>
         <div><dt>做完</dt><dd>补出那一个词，并写下下一个修改点</dd></div>
       </dl>
-      <p>Mina 坐火车，读妹妹的一张便条。这一课只做一件事：第二遍只补一个词，不要把整段听写下来。先听，不要在听之前翻开核对。写在纸上。这一页不保存你写的内容。音频很短，十五分钟用来写那一个词，并看下面那一处。</p>
+      <p>Mina 坐火车，读妹妹的一张便条。这一课只做一件事：第二遍只补一个词，不要把整段听写下来。先听，不要在听之前翻开核对。写在这一页的框里。只留在这次浏览，不上传。音频很短，十五分钟用来写那一个词，并看下面那一处。</p>
       <h2>材料</h2>
       <p>先听一遍，知道是谁的事即可。再听第二遍时，只盯着下面这一句的空。没有变速。</p>
       <p lang="en">The note says the dinner is on ____.</p>
         <audio class="clip" controls preload="metadata" controlslist="noplaybackrate" src="../../assets/audio/listen-02.wav">
           <a href="../../assets/audio/listen-02.wav">listen-02.wav</a>
         </audio>
-      <details class="fold">
-        <summary>听完再看原文</summary>
+      <div class="practice" data-practice="gate">
+        <h2>补在这里</h2>
+        <p>只写那一个词。写下以后才能打开原文和核对。只留在这次浏览，不上传，也不打分。</p>
+        <label class="field">
+          <span>那一个词</span>
+          <input type="text" data-keep autocomplete="off" spellcheck="false">
+        </label>
+        <p class="need" hidden>先写下来，再打开。</p>
+      </div>
+      <details class="fold" data-locked>
+        <summary>写下以后再看原文</summary>
         <p class="passage" lang="en">
           <span>Mina takes the train at seven forty.</span>
           <span>She reads a short note from her sister.</span>
@@ -60,8 +69,8 @@
         <li>写完再打开核对，然后才看原文。</li>
       </ol>
       <h2>核对</h2>
-      <details class="fold">
-        <summary>先写在纸上，再看核对</summary>
+      <details class="fold" data-locked>
+        <summary>写下以后再看核对</summary>
         <p>那个词是 <span lang="en">Friday</span>。</p>
         <p lang="en">The note says the dinner is on Friday.</p>
       </details>
@@ -83,5 +92,6 @@
       <p>静态页面 · 不收集访问数据 · MIT</p>
     </footer>
   </div>
+  <script src="../../assets/js/practice.js" defer></script>
 </body>
 </html>
