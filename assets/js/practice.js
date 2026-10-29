@@ -56,8 +56,15 @@
       return true;
     }
 
+    var round = document.querySelector(".round[data-wait]");
+
+    function syncRound() {
+      if (round && tried()) round.hidden = false;
+    }
+
     function onField() {
       if (note && tried()) note.hidden = true;
+      syncRound();
       writeStore();
     }
 
@@ -73,6 +80,8 @@
         writeStore();
       });
     }
+
+    syncRound();
 
     for (var k = 0; k < locks.length; k++) {
       locks[k].addEventListener("click", function (event) {
