@@ -23,7 +23,7 @@ python3 -m http.server 8000
 - [听](listen/)：四段不到一分钟的音频。听完用中文说出谁做了什么，或第二遍只补一个词。原文默认折着
 - [说](speak/)：四课跟读，用的是听过的句子。用自己的手机录音，网站不接收
 - [写](write/)：四课。从读过的句子换一个自己的细节，对照四条清单。写在纸上，不打分
-- [读](read/)：五课。前两课找谁在做什么，后三课看代词指回谁。没有词表，也没有音频
+- [读](read/)：五课，每篇大约 220–320 个词。前两课找谁在做什么，后三课看代词指回谁。没有词表，也没有音频
 
 英文是同一套页面，放在 `en/` 下面。课文里的英文原文两边相同，说明按各自的语言写。
 
@@ -42,7 +42,7 @@ python3 -m http.server 8000
 内容按阶段加，不一次铺开整门课：
 
 1. 听力：已经有四段短音频
-2. 阅读：已经有五课。前两课找谁在做什么，后三课看代词指回谁
+2. 阅读：已经有五课，每篇大约 220–320 个词。前两课找谁在做什么，后三课看代词指回谁
 3. 口语：已经有四课跟读。录音留在自己的手机里，不上传
 4. 写作：已经有四课。从读过的句子换一个自己的细节，对照清单，不打分
 5. 一周安排和课文索引：已经有了。听、读、说、写各一次，外加一天休息或只看修改点
@@ -60,7 +60,7 @@ python3 -m http.server 8000
 
 ## English
 
-A static notebook for adults who use Chinese and are learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. Start at the one-week page: listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that week, the index, a method page, five reading lessons, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Sentences and ticks stay on paper. The site has nowhere to upload them, it does not score them, and it does not store checks. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
+A static notebook for adults who use Chinese and are learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. Start at the one-week page: listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that week, the index, a method page, five reading lessons of about 220–320 words, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Sentences and ticks stay on paper. The site has nowhere to upload them, it does not score them, and it does not store checks. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
 
 ## License
 

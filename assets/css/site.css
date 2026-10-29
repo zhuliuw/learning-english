@@ -1,15 +1,16 @@
 /* 清楚学英语. Adult notebook. System fonts only. No external assets. */
 
 :root {
-  --paper: #f1f2f4;
-  --desk: #cfd3da;
-  --ink: #1b1f26;
-  --ink-soft: #4c5462;
-  --rule: #c5c9d1;
-  --margin: #1b1f26;
-  --wash: #e4e7ed;
-  --mark: #d5deea;
-  --link: #1c3d66;
+  --paper: #f7faf9;
+  --desk: #d5e3e2;
+  --ink: #142226;
+  --ink-soft: #5a6d72;
+  --rule: #d3e0e2;
+  --margin: #0c6e6a;
+  --wash: #e7f3f1;
+  --mark: #d4ebe6;
+  --link: #0c6e6a;
+  --accent: #0c6e6a;
   --serif: "Iowan Old Style", "Palatino Linotype", Palatino, "Liberation Serif", Georgia, serif;
 }
 
@@ -31,8 +32,8 @@ body {
     "Source Han Sans SC", "Microsoft YaHei", "WenQuanYi Micro Hei", "Droid Sans Fallback",
     "Segoe UI", sans-serif;
   font-size: 1.0625rem;
-  line-height: 1.65;
-  padding: 1.5rem 1rem 2.25rem;
+  line-height: 1.7;
+  padding: 1.75rem 1.1rem 2.5rem;
 }
 
 ::selection {
@@ -56,14 +57,13 @@ body {
 }
 
 .sheet {
-  width: min(40rem, 100%);
+  width: min(42rem, 100%);
   margin: 0 auto;
-  min-height: calc(100vh - 3rem);
-  min-height: calc(100dvh - 3rem);
-  padding: 1.6rem 1.55rem 3.4rem;
+  min-height: calc(100vh - 3.5rem);
+  min-height: calc(100dvh - 3.5rem);
+  padding: 1.85rem 1.8rem 3.6rem;
   background: var(--paper);
-  border: 1px solid #b7bcc6;
-  border-left: 2px solid var(--ink);
+  border: 1px solid #c5d5d4;
 }
 
 a {
@@ -155,7 +155,7 @@ a:hover {
 }
 
 .pages a[aria-current="page"] {
-  color: var(--ink);
+  color: var(--accent);
   text-decoration: underline;
   text-decoration-thickness: 1px;
   text-underline-offset: 0.32em;
@@ -173,15 +173,16 @@ h3 {
 }
 
 h1 {
-  margin: 0.35rem 0 0;
+  margin: 0.45rem 0 0;
   max-width: 16em;
-  font-size: clamp(1.9rem, 4vw, 2.45rem);
-  letter-spacing: -0.02em;
+  font-size: clamp(2.05rem, 4.4vw, 2.7rem);
+  letter-spacing: -0.03em;
+  line-height: 1.15;
 }
 
 h2 {
-  margin: 2.15rem 0 0.5rem;
-  font-size: 1.12rem;
+  margin: 2.35rem 0 0.55rem;
+  font-size: 1.14rem;
 }
 
 h3 {
@@ -203,7 +204,7 @@ main li {
 
 .eyebrow {
   margin: 0;
-  color: var(--ink-soft);
+  color: var(--accent);
   font-size: 0.78rem;
   font-weight: 700;
   letter-spacing: 0.08em;
@@ -351,11 +352,11 @@ html[lang="en"] .skills a {
 .meta {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.85rem 1.5rem;
-  margin: 1.25rem 0 0.2rem;
-  padding: 0.75rem 0;
-  border-top: 1px solid var(--rule);
-  border-bottom: 1px solid var(--rule);
+  gap: 0.9rem 1.6rem;
+  margin: 1.4rem 0 0.15rem;
+  padding: 0.85rem 0 0.15rem;
+  border-top: 2px solid var(--accent);
+  border-bottom: none;
 }
 
 .meta > div {
@@ -364,7 +365,7 @@ html[lang="en"] .skills a {
 }
 
 .meta dt {
-  color: var(--ink-soft);
+  color: var(--accent);
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.06em;
@@ -381,17 +382,18 @@ html[lang="en"] .meta dt {
 }
 
 .passage {
-  margin: 1rem 0 0;
-  padding: 0.1rem 0 0.1rem 1rem;
-  border-left: 2px solid var(--ink);
+  margin: 1.15rem 0 0;
+  padding: 1.05rem 1.15rem 1.1rem 1.2rem;
+  background: var(--wash);
+  border-left: 3px solid var(--accent);
   font-family: var(--serif);
   font-size: 1.2rem;
-  line-height: 1.5;
+  line-height: 1.62;
 }
 
 .passage span {
   display: block;
-  padding: 0.28rem 0;
+  padding: 0.42rem 0;
 }
 
 .empty {
@@ -431,7 +433,7 @@ html[lang="en"] .meta dt {
 
 .fold summary::before {
   content: "+ ";
-  color: var(--ink);
+  color: var(--accent);
   font-weight: 700;
 }
 
@@ -472,7 +474,8 @@ footer p {
   }
 
   .passage {
-    font-size: 1.12rem;
+    font-size: 1.1rem;
+    padding: 0.85rem 0.85rem 0.9rem 0.95rem;
   }
 
   .lead {
@@ -538,7 +541,11 @@ footer p {
     max-width: none;
     min-height: 0;
     border: none;
-    border-left: 2px solid black;
+  }
+
+  .passage {
+    background: transparent;
+    border-left-color: black;
   }
 
   a {
