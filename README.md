@@ -20,7 +20,7 @@ python3 -m http.server 8000
 - [怎么学](method/)：一课只做一件事，做完只留一个修改点
 - [听](listen/)：四段不到一分钟的音频。听完用中文说出谁做了什么，或第二遍只补一个词。原文默认折着
 - [说](speak/)：四课跟读，用的是听过的句子。用自己的手机录音，网站不接收
-- 写：还没有课
+- [写](write/)：四课。从读过的句子换一个自己的细节，对照四条清单。写在纸上，不打分
 - [读](read/)：五课。前两课找谁在做什么，后三课看代词指回谁。没有词表，也没有音频
 
 英文是同一套页面，放在 `en/` 下面。课文里的英文原文两边相同，说明按各自的语言写。
@@ -36,7 +36,7 @@ python3 -m http.server 8000
 1. 听力：已经有四段短音频
 2. 阅读：已经有五课。前两课找谁在做什么，后三课看代词指回谁
 3. 口语：已经有四课跟读。录音留在自己的手机里，不上传
-4. 写作：改写读过的句子，附一段短参考和一张短清单，不自动打分
+4. 写作：已经有四课。从读过的句子换一个自己的细节，对照清单，不打分
 5. 把四项收成一周的安排，并列出已经有的课
 
 每一阶段仍然是静态页面，没有账号。
@@ -51,7 +51,7 @@ python3 -m http.server 8000
 
 ## English
 
-A static notebook for Chinese speakers learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. What is here: a method page, five reading lessons, four short listening clips, and four speaking lessons that shadow those same lines. Writing is still a stub. Recordings stay on the learner’s phone. The site has nowhere to upload them. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. Later: sentence rewrites and a one-week plan.
+A static notebook for Chinese speakers learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. What is here: a method page, five reading lessons, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Sentences stay on paper. The site has nowhere to upload them, and it does not score them. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. Later: a one-week plan.
 
 ## License
 
