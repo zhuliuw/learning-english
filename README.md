@@ -12,7 +12,7 @@ python3 -m http.server 8000
 
 浏览器打开 <http://localhost:8000/>。
 
-请用本地服务器打开，不要直接双击 HTML。页面里的链接从网站根目录写起，直接打开文件会找不到样式和其他页面。
+请用本地服务器打开，不要直接双击 HTML。页面、样式、音频和语言切换都写成相对路径，所以同一套文件放在仓库根目录，或放在 `/learning-english/` 下面，都能打开。直接双击文件时，目录链接不一定找得到页面。
 
 ## 现在有什么
 
@@ -30,6 +30,12 @@ python3 -m http.server 8000
 听力文件在 `assets/audio/`，全站只用 wav。句子是本站写的。声音用 espeak-ng 的美国英语、同一语速合成，可再分发。不是教科书、歌曲或影视录音。页面上没有变速控件。
 
 页面不加载外部字体、脚本或统计。
+
+## 在线地址
+
+发布地址是 <https://zhuliuw.github.io/learning-english/>。
+
+<https://zhuliuw.github.io/> 是另一个用户站点，和这个仓库分开。不要改那个仓库来发布这里的页面。
 
 ## 以后
 
@@ -50,10 +56,11 @@ python3 -m http.server 8000
 - 更新该技能的目录页。首页如果还写着「没有课」，改掉那一句
 - 不加重框架，不放第三方脚本
 - 若是听力课，音频仍用 wav，放在 `assets/audio/`，并沿用同一种读法
+- 新链接按该页所在目录写相对路径，不要写成 `/week/` 或 `/assets/` 这种从网站根目录起的地址
 
 ## English
 
-A static notebook for Chinese speakers learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. Start at the one-week page: listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that week, the index, a method page, five reading lessons, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Sentences and ticks stay on paper. The site has nowhere to upload them, it does not score them, and it does not store checks. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root.
+A static notebook for Chinese speakers learning English. Chinese is the default; use the language link for the same page in English. No login, no backend, no tracking. Start at the one-week page: listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that week, the index, a method page, five reading lessons, four short listening clips, four speaking lessons that shadow those same lines, and four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Sentences and ticks stay on paper. The site has nowhere to upload them, it does not score them, and it does not store checks. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
 
 ## License
 
