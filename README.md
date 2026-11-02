@@ -16,20 +16,20 @@ python3 -m http.server 8000
 
 ## 现在有什么
 
-- 首页：怎么开始指向 [这一个月](week/)
-- [这一个月](week/)：四周安排。每一周听、读、说、写各一次，再留一天休息或只看一个修改点。四周各有可打印清单。勾选不存在网站里
+- 首页：怎么开始指向 [两个月](week/)
+- [两个月](week/)：八周安排，分第一个月与第二个月。每一周听、读、说、写各一次，再留一天休息或只看一个修改点。每周有可打印清单。勾选不存在网站里
 - [课文](lessons/)：已经有的课，链到各课
 - [怎么学](method/)：一课只做一件事，做完只留一个修改点
-- [听](listen/)：五段不到一分钟的音频。听完用中文说出谁做了什么，或第二遍只补一个词。原文默认折着
-- [说](speak/)：五课跟读，用的是听过的句子。用自己的手机录音，网站不接收
-- [写](write/)：五课。从读过的句子换一个自己的细节，对照四条清单。写在课文页的框里，不打分
-- [读](read/)：六课，每篇大约 220–320 个词。前两课找谁在做什么，后四课看代词指回谁。没有词表，也没有音频
+- [听](listen/)：八段不到一分钟的音频。听完用中文说出谁做了什么，或第二遍只补一个词。原文默认折着
+- [说](speak/)：八课跟读，用的是听过的句子。用自己的手机录音，网站不接收
+- [写](write/)：八课。从读过的句子换一个自己的细节，对照四条清单。写在课文页的框里，不打分
+- [读](read/)：八课，每篇大约 220–320 个词。前两课找谁在做什么，后六课看代词指回谁。没有词表，也没有音频
 
 英文是同一套页面，放在 `en/` 下面。课文里的英文原文两边相同，说明按各自的语言写。
 
 听力文件在 `assets/audio/`，全站只用 wav。句子是本站写的。声音用 espeak-ng 的美国英语、同一语速合成，可再分发。不是教科书、歌曲或影视录音。页面上没有变速控件。
 
-课文页上可以写下这一课的答案，或给口语的三问自己做标记。字和标记只留在这次浏览的浏览器里，用本站的 `assets/js/practice.js`。不上传，不打分，也没有账号。听力要先写了，才能打开原文和核对。听的五课、读的六课、说的五课和写的五课，写完或标完可以再来一轮：把这一课里的四五个词按原句点回去。阅读要先写下三问，口语要先标完三问，写作要先写下改过的那一句。对错只显示在这一页，不记分，也不上传。
+课文页上可以写下这一课的答案，或给口语的三问自己做标记。字和标记只留在这次浏览的浏览器里，用本站的 `assets/js/practice.js`。不上传，不打分，也没有账号。听力要先写了，才能打开原文和核对。听的八课、读的八课、说的八课和写的八课，写完或标完可以再来一轮：把这一课里的四五个词按原句点回去。阅读要先写下三问，口语要先标完三问，写作要先写下改过的那一句。对错只显示在这一页，不记分，也不上传。
 
 页面不加载外部字体。访问次数由本站的 `assets/js/visits.js` 送出，不嵌入第三方脚本。
 
@@ -57,11 +57,11 @@ GitHub Pages 不能把访问记在仓库里，也跑不了服务器。每一页�
 
 内容按阶段加，不一次铺开整门课：
 
-1. 听力：已经有五段短音频
-2. 阅读：已经有六课，每篇大约 220–320 个词。前两课找谁在做什么，后四课看代词指回谁
-3. 口语：已经有五课跟读。录音留在自己的手机里，不上传
-4. 写作：已经有五课。从读过的句子换一个自己的细节，对照清单，不打分
-5. 一个月四周安排和课文索引：已经有了。四周各有听、读、说、写各一次，外加一天休息或只看修改点
+1. 听力：已经有八段短音频
+2. 阅读：已经有八课，每篇大约 220–320 个词。前两课找谁在做什么，后六课看代词指回谁
+3. 口语：已经有八课跟读。录音留在自己的手机里，不上传
+4. 写作：已经有八课。从读过的句子换一个自己的细节，对照清单，不打分
+5. 两个月八周安排和课文索引：已经有了。每月四周各有听、读、说、写各一次，外加一天休息或只看修改点。第一个月用 1–4 课，第二个月用 5–8 课
 
 每一阶段仍然是静态页面，没有账号。
 
@@ -76,7 +76,7 @@ GitHub Pages 不能把访问记在仓库里，也跑不了服务器。每一页�
 
 ## English
 
-A static notebook for adults who use Chinese and are learning English. Chinese is the default; use the language link for the same page in English. No login and no backend. Visits are counted by page and time. No name is stored. Start at the month page: four weeks. Each week, listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that month path, the index, a method page, six reading lessons of about 220–320 words, five short listening clips, five speaking lessons that shadow those same lines, and five writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Week ticks stay on paper. The month path uses lessons 1–4 of each skill; lessons 5–6 remain in the index. On a lesson, the learner types an answer or marks the three speaking checks. That stays in the browser for the visit, in `assets/js/practice.js`. It is not uploaded, it is not scored, and there is no account. A listening check stays folded until the learner has written. On the five listening lessons, the six reading lessons, the five speaking lessons, and the five writing lessons, a short extra round asks the learner to tap four or five words from that lesson back into order. A reading round waits until the three answers are written. A speaking round waits until the three checks are marked. A writing round waits until the rewritten sentence is written. The yes or no stays on the page. It is not stored as a score, and it is not uploaded. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
+A static notebook for adults who use Chinese and are learning English. Chinese is the default; use the language link for the same page in English. No login and no backend. Visits are counted by page and time. No name is stored. Start at the two-month page: eight weeks in two months. Each week, listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that two-month path, the index, a method page, eight reading lessons of about 220–320 words, eight short listening clips, eight speaking lessons that shadow those same lines, and eight writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Week ticks stay on paper. Month 1 uses lessons 1–4 of each skill; month 2 uses lessons 5–8. On a lesson, the learner types an answer or marks the three speaking checks. That stays in the browser for the visit, in `assets/js/practice.js`. It is not uploaded, it is not scored, and there is no account. A listening check stays folded until the learner has written. On the eight listening lessons, the eight reading lessons, the eight speaking lessons, and the eight writing lessons, a short extra round asks the learner to tap four or five words from that lesson back into order. A reading round waits until the three answers are written. A speaking round waits until the three checks are marked. A writing round waits until the rewritten sentence is written. The yes or no stays on the page. It is not stored as a score, and it is not uploaded. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
 
 GitHub Pages cannot store the visit log and cannot run a server. `assets/js/visits.js` sends the page path and the time to Abacus (`abacus.jasoncameron.dev`, namespace `zhuliuw-learning-english`). No account and no key. Abacus keeps one number per page, not each timestamp. A path under `/learning-english/` is counted as the same page without that prefix. The site does not show the numbers and does not link to the counter. Owner reads the counts: https://abacus.jasoncameron.dev/get/zhuliuw-learning-english/home — other pages use the path with slashes turned into hyphens; the home key is `home`, and listening lesson 1 is `listen-lesson-01`. Names, accounts, typed answers, recordings, and the word-order result are not sent. Abacus can see the network connection. <https://zhuliuw.github.io/learning-english/> stays the static copy until there is another host. Do not change GitHub Pages settings for this count.
 
