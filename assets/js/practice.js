@@ -12,6 +12,8 @@
     var note = block.querySelector(".need");
     var locks = document.querySelectorAll("details[data-locked]");
     var key = "practice:" + location.pathname;
+    var lang = (document.documentElement.lang || "").toLowerCase();
+    var en = lang.indexOf("en") === 0;
 
     function readStore() {
       try {
@@ -48,6 +50,19 @@
       }
     }
 
+    function markLabel(button, on) {
+      var base = button.getAttribute("data-label") || button.textContent.trim();
+      if (!button.getAttribute("data-label")) button.setAttribute("data-label", base);
+      var prefix = on
+        ? (en ? "Marked. " : "已标。")
+        : (en ? "Not marked. " : "未标。");
+      button.setAttribute("aria-label", prefix + base);
+    }
+
+    for (var m = 0; m < marks.length; m++) {
+      markLabel(marks[m], marks[m].getAttribute("aria-pressed") === "true");
+    }
+
     function tried() {
       if (fields.length) {
         for (var i = 0; i < fields.length; i++) {
@@ -65,13 +80,46 @@
     }
 
     var round = document.querySelector(".round[data-wait]");
+    var roundStatus = null;
+    var announceRound = false;
+
+    function ensureRoundStatus() {
+      if (!round || roundStatus) return;
+      roundStatus = document.createElement("p");
+      roundStatus.className = "round-status";
+      roundStatus.setAttribute("aria-live", "polite");
+      roundStatus.hidden = true;
+      round.insertBefore(roundStatus, round.firstChild);
+    }
 
     function syncRound() {
-      if (round && tried()) round.hidden = false;
+      if (!round || !tried()) return;
+      var wasHidden = round.hidden;
+      round.hidden = false;
+      if (wasHidden && announceRound) {
+        ensureRoundStatus();
+        if (roundStatus) {
+          roundStatus.hidden = false;
+          roundStatus.textContent = en
+            ? "A short word-order round is ready below."
+            : "下面多了一轮排词。";
+        }
+        var heading = round.querySelector("h2");
+        if (heading) {
+          if (!heading.id) heading.id = "round-heading";
+          heading.setAttribute("tabindex", "-1");
+          try {
+            heading.focus({ preventScroll: false });
+          } catch (err) {
+            heading.focus();
+          }
+        }
+      }
     }
 
     function onField() {
       if (note && tried()) note.hidden = true;
+      announceRound = true;
       syncRound();
       writeStore();
     }
@@ -85,6 +133,8 @@
         var button = event.currentTarget;
         var on = button.getAttribute("aria-pressed") !== "true";
         button.setAttribute("aria-pressed", on ? "true" : "false");
+        markLabel(button, on);
+        announceRound = true;
         syncRound();
         writeStore();
       });
@@ -96,12 +146,23 @@
       locks[k].addEventListener("click", function (event) {
         if (tried()) return;
         event.preventDefault();
-        if (note) note.hidden = false;
+        if (note) {
+          note.hidden = false;
+          try {
+            note.focus({ preventScroll: false });
+          } catch (err) {
+            /* note may not be focusable */
+          }
+        }
       });
       locks[k].addEventListener("toggle", function (event) {
         var details = event.currentTarget;
         if (details.open && !tried()) details.open = false;
       });
+    }
+
+    if (note && !note.hasAttribute("tabindex")) {
+      note.setAttribute("tabindex", "-1");
     }
   }
 
@@ -117,6 +178,15 @@
     var noText = round.getAttribute("data-no") || "";
     if (!bank || !line || words.length < 3) return;
 
+    var lang = (document.documentElement.lang || "").toLowerCase();
+    var en = lang.indexOf("en") === 0;
+    var bankLabel = bank.getAttribute("aria-label") || (en ? "Word bank" : "词");
+    var lineLabel = line.getAttribute("aria-label") || (en ? "Your order" : "你排的顺序");
+    bank.setAttribute("role", "group");
+    line.setAttribute("role", "group");
+    bank.setAttribute("aria-label", bankLabel);
+    line.setAttribute("aria-label", lineLabel);
+
     var order = shuffle(words);
     for (var i = 0; i < order.length; i++) {
       bank.appendChild(makeButton(order[i]));
@@ -126,14 +196,30 @@
       var button = document.createElement("button");
       button.type = "button";
       button.textContent = word;
+      button.setAttribute(
+        "aria-label",
+        en ? word + ". Add to your order." : word + "。点到你排的顺序。"
+      );
       button.addEventListener("click", onTap);
       return button;
     }
 
     function onTap(event) {
       var button = event.currentTarget;
-      if (button.parentNode === bank) line.appendChild(button);
-      else bank.appendChild(button);
+      var word = button.textContent;
+      if (button.parentNode === bank) {
+        line.appendChild(button);
+        button.setAttribute(
+          "aria-label",
+          en ? word + ". Remove from your order." : word + "。从顺序里拿回。"
+        );
+      } else {
+        bank.appendChild(button);
+        button.setAttribute(
+          "aria-label",
+          en ? word + ". Add to your order." : word + "。点到你排的顺序。"
+        );
+      }
       check();
     }
 
