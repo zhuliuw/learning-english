@@ -588,6 +588,22 @@ html[lang="en"] .marks button[aria-pressed="true"]::before {
   font-weight: 650;
 }
 
+.round-status {
+  margin: 0 0 0.55rem;
+  color: var(--tide);
+  font-size: 0.92rem;
+  font-weight: 650;
+}
+
+.round h2:focus {
+  outline: none;
+}
+
+.round h2:focus-visible {
+  outline: 2px solid var(--tide);
+  outline-offset: 3px;
+}
+
 .round-note[data-state="ok"] {
   color: var(--tide);
 }
@@ -715,23 +731,43 @@ footer p {
 }
 
 @media print {
+  @page {
+    margin: 1.4cm 1.2cm;
+  }
+
   body {
     padding: 0;
     background: white;
+    color: black;
+    font-size: 11pt;
+    line-height: 1.45;
   }
 
   .skip,
   .lang,
   .pages,
   .actions,
+  .round,
+  .round-status,
   footer {
-    display: none;
+    display: none !important;
   }
 
   .sheet {
+    width: 100%;
     max-width: none;
     min-height: 0;
     padding: 0;
+  }
+
+  .top {
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid #bbb;
+    margin-bottom: 0.8rem;
+  }
+
+  .brand-name::after {
+    display: none;
   }
 
   .path a,
@@ -740,20 +776,47 @@ footer p {
   .ticks > li,
   .passage,
   .practice,
-  .round,
   .point,
   .fold,
   .meta > div,
   .field textarea,
-  .field input,
-  .round-bank,
-  .round-line {
+  .field input {
     background: white;
+    box-shadow: none;
+  }
+
+  /* Month and week hubs: keep the checklist readable on paper. */
+  .ticks > li {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border: 1px solid #bbb;
+    padding-left: 2.5rem;
+  }
+
+  .ticks > li::before {
+    border-color: black;
+  }
+
+  .path a {
+    break-inside: avoid;
+    page-break-inside: avoid;
+    border-bottom: 1px solid #ddd;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .path-kicker {
+    color: black;
   }
 
   a {
     color: black;
     text-decoration: none;
+  }
+
+  .clip,
+  audio {
+    display: none;
   }
 }
 

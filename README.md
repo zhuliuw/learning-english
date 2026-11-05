@@ -12,12 +12,22 @@ python3 -m http.server 8000
 
 浏览器打开 <http://localhost:8000/>。
 
+若要和线上一样带 `/learning-english/` 前缀，可在上一级目录挂符号链接后再开服务器，例如：
+
+```bash
+mkdir -p /tmp/le-serve
+ln -sfn "$PWD" /tmp/le-serve/learning-english
+python3 -m http.server 8000 --directory /tmp/le-serve
+```
+
+然后打开 <http://localhost:8000/learning-english/>。
+
 请用本地服务器打开，不要直接双击 HTML。页面、样式、音频和语言切换都写成相对路径，所以同一套文件放在仓库根目录，或放在 `/learning-english/` 下面，都能打开。直接双击文件时，目录链接不一定找得到页面。
 
 ## 现在有什么
 
-- 首页：怎么开始指向 [六个月](week/)
-- [六个月](week/)：二十四周安排，分第一个月到第六个月。每一周听、读、说、写各一次，再留一天休息或只看一个修改点。每周有可打印清单。勾选不存在网站里
+- 首页：主按钮进 [第一个月](week/month-01/)，也可看 [六个月总表](week/)
+- [六个月](week/)：二十四周安排，分第一个月到第六个月。每一周听、读、说、写各一次，再留一天休息或只看一个修改点。月页和周页适合打印；勾选写在纸上，不存在网站里
 - [课文](lessons/)：已经有的课，链到各课
 - [怎么学](method/)：一课只做一件事，做完只留一个修改点
 - [听](listen/)：二十四段不到一分钟的音频。听完用中文说出谁做了什么，或第二遍只补一个词。原文默认折着
@@ -76,7 +86,7 @@ GitHub Pages 不能把访问记在仓库里，也跑不了服务器。每一页�
 
 ## English
 
-A static notebook for adults who use Chinese and are learning English. Chinese is the default; use the language link for the same page in English. No login and no backend. Visits are counted by page and time. No name is stored. Start at the six-month page: twenty-four weeks in six months. Each week, listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that six-month path, the index, a method page, twenty-four reading lessons of about 220–320 words, twenty-four short listening clips, twenty-four speaking lessons that shadow those same lines, and twenty-four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Week ticks stay on paper. Month 1 uses lessons 1–4 of each skill; month 2 uses lessons 5–8; month 3 uses lessons 9–12; month 4 uses lessons 13–16; month 5 uses lessons 17–20; month 6 uses lessons 21–24. On a lesson, the learner types an answer or marks the three speaking checks. That stays in the browser for the visit, in `assets/js/practice.js`. It is not uploaded, it is not scored, and there is no account. A listening check stays folded until the learner has written. On the twenty-four listening lessons, the twenty-four reading lessons, the twenty-four speaking lessons, and the twenty-four writing lessons, a short extra round asks the learner to tap four or five words from that lesson back into order. A reading round waits until the three answers are written. A speaking round waits until the three checks are marked. A writing round waits until the rewritten sentence is written. The yes or no stays on the page. It is not stored as a score, and it is not uploaded. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
+A static notebook for adults who use Chinese and are learning English. Chinese is the default; use the language link for the same page in English. No login and no backend. Visits are counted by page and time. No name is stored. The home page’s main button opens month 1; the six-month map lists all twenty-four weeks. Each week, listen, read, speak, and write once each, then rest or review one change. A lesson index links to every lesson already on the site. What is here: that six-month path, the index, a method page, twenty-four reading lessons of about 220–320 words, twenty-four short listening clips, twenty-four speaking lessons that shadow those same lines, and twenty-four writing lessons that each change one sentence from a passage already on the site. Recordings stay on the learner’s phone. Week ticks stay on paper. Month 1 uses lessons 1–4 of each skill; month 2 uses lessons 5–8; month 3 uses lessons 9–12; month 4 uses lessons 13–16; month 5 uses lessons 17–20; month 6 uses lessons 21–24. On a lesson, the learner types an answer or marks the three speaking checks. That stays in the browser for the visit, in `assets/js/practice.js`. It is not uploaded, it is not scored, and there is no account. A listening check stays folded until the learner has written. On the twenty-four listening lessons, the twenty-four reading lessons, the twenty-four speaking lessons, and the twenty-four writing lessons, a short extra round asks the learner to tap four or five words from that lesson back into order. A reading round waits until the three answers are written. A speaking round waits until the three checks are marked. A writing round waits until the rewritten sentence is written. The yes or no stays on the page. It is not stored as a score, and it is not uploaded. The reading lessons have no word lists. The clips are original sentences spoken with espeak-ng (US English, one speed) and stored as wav under `assets/audio/`. Serve the repo root with any static file server, then open the site root. The same relative links also work when the repo is published at <https://zhuliuw.github.io/learning-english/>. The user site at <https://zhuliuw.github.io/> is separate.
 
 GitHub Pages cannot store the visit log and cannot run a server. `assets/js/visits.js` sends the page path and the time to Abacus (`abacus.jasoncameron.dev`, namespace `zhuliuw-learning-english`). No account and no key. Abacus keeps one number per page, not each timestamp. A path under `/learning-english/` is counted as the same page without that prefix. The site does not show the numbers and does not link to the counter. Owner reads the counts: https://abacus.jasoncameron.dev/get/zhuliuw-learning-english/home — other pages use the path with slashes turned into hyphens; the home key is `home`, and listening lesson 1 is `listen-lesson-01`. Names, accounts, typed answers, recordings, and the word-order result are not sent. Abacus can see the network connection. <https://zhuliuw.github.io/learning-english/> stays the static copy until there is another host. Do not change GitHub Pages settings for this count.
 
